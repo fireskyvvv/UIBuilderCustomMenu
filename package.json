@@ -3,7 +3,7 @@
   "displayName": "UIBuilderCustomMenu",
   "version": "0.1.0",
   "unity": "6000.0",
-  "description": "description.",
+  "description": "This is an Editor extension that allows you to add custom menus on the UIBuilder",
   "author": {
     "name": "katen"
   },
@@ -12,11 +12,6 @@
       "displayName": "SimpleSample",
       "description": "",
       "path": "Samples~/SimpleSample"
-    },
-    {
-      "displayName": "LocalizationSample",
-      "description": "",
-      "path": "Samples~/LocalizationSample"
     }
   ]
 }
