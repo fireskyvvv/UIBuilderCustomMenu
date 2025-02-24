@@ -1,0 +1,22 @@
+{
+  "name": "com.katen.ui-builder-custom-menu",
+  "displayName": "UIBuilderCustomMenu",
+  "version": "0.1.0",
+  "unity": "6000.0",
+  "description": "description.",
+  "author": {
+    "name": "katen"
+  },
+  "samples": [
+    {
+      "displayName": "SimpleSample",
+      "description": "",
+      "path": "Samples~/SimpleSample"
+    },
+    {
+      "displayName": "LocalizationSample",
+      "description": "",
+      "path": "Samples~/LocalizationSample"
+    }
+  ]
+}

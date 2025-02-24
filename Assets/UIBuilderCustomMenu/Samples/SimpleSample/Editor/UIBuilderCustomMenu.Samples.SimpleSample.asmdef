@@ -1,0 +1,18 @@
+{
+    "name": "UIBuilderCustomMenu.Samples.SimpleSample",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7c175cb1d7941604da59160fea41bf3d"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
