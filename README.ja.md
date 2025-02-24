@@ -30,7 +30,7 @@ internal class SimpleSampleMenu
 }
 ```
 
-### `[CreateUIBuilderCustomMenuAttribute]`
+## `[CreateUIBuilderCustomMenuAttribute]`
 
 UIBuilderCustomMenuは `[CreateUIBuilderCustomMenuAttribute]` が設定されたメソッドからメニューを作成します。  
 `[CreateUIBuilderCustomMenuAttribute]` を設定することができるメソッドは以下の条件である必要があります。  
@@ -39,34 +39,34 @@ UIBuilderCustomMenuは `[CreateUIBuilderCustomMenuAttribute]` が設定された
 - 引数を持たない
 - List<CustomMenuInfo> を返り値に持つ
 
-#### `Priority`
+### `Priority`
 
 Priorityは各Menuを表示する順序を決定するのに使われます。    
 数値が小さいほどより優先的に表示されます。  
 
 また、Priorityの差が11以上ある場合、セパレータが表示されます。
 
-### `CustomMenuInfo`
+## `CustomMenuInfo`
 
 `CustomMenuInfo` はメニューのパスやクリックした時の挙動を設定することができます。
 
-#### `MenuPath` 
+### `MenuPath` 
 
 `MenuPath`に設定された文字列に従ってUIBuilder上にメニューを追加します。  
 `Sub/1` という文字列が設定された場合、UIBuilder上で `Custom Menu > Sub > 1` とメニューが追加されます。
 
-#### `OnClickAction`
+### `OnClickAction`
 
 メニューがクリックされた場合の挙動を定義することができます。  
 
-#### `GetStatus`
+### `GetStatus`
 
 メニューのステータスの状態を取得するFuncを指定することができます。  
 返り値は `DropdownMenuAction.Status` です。  
 詳細は以下を参照してください。  
 https://docs.unity3d.com/6000.0/Documentation/ScriptReference/UIElements.DropdownMenuAction-status.html
 
-#### `Separate`
+### `Separate`
 
 メニュー間にセパレータを表示するかどうかを決定します。
 
