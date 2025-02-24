@@ -4,28 +4,28 @@ using UnityEngine.UIElements;
 namespace UIBuilderCustomMenu.Editor
 {
     /// <summary>
-    /// 作成されるCustomMenuに関する情報を定義します
+    /// Defines information about the CustomMenu to be created
     /// </summary>
     public class CustomMenuInfo
     {
         public readonly string MenuPath;
-        public readonly Action<DropdownMenuAction> Action;
+        public readonly Action<DropdownMenuAction> OnClickAction;
         public readonly Func<DropdownMenuAction, DropdownMenuAction.Status> GetStatus;
         public readonly bool Separate;
-        
-        /// <param name="menuPath">CustomMenuのパス</param>
-        /// <param name="callback">メニューを押下したときのコールバック</param>
-        /// <param name="getStatus">メニューの状態を返すコールバック</param>
-        /// <param name="separate">セパレータを表示するかどうか</param>
+
+        /// <param name="menuPath">CustomMenu path</param>.
+        /// <param name="onClickAction">Callback when the menu is pressed</param>.
+        /// <param name="getStatus">Callback that returns the menu status</param>.
+        /// <param name="separate">Whether the separator is displayed</param>.
         public CustomMenuInfo(
             string menuPath,
-            Action<DropdownMenuAction> callback,
+            Action<DropdownMenuAction> onClickAction,
             Func<DropdownMenuAction, DropdownMenuAction.Status> getStatus = null,
             bool separate = false
         )
         {
             MenuPath = menuPath;
-            Action = callback;
+            OnClickAction = onClickAction;
             GetStatus = getStatus ?? (_ => DropdownMenuAction.Status.Normal);
             Separate = separate;
         }
