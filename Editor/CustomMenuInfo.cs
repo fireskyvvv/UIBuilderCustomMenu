@@ -29,5 +29,10 @@ namespace UIBuilderCustomMenu.Editor
             GetStatus = getStatus ?? (_ => DropdownMenuAction.Status.Normal);
             Separate = separate;
         }
+
+        public static void ForceRefresh()
+        {
+            UIBuilderCustomMenuCreator.Refresh();
+        }
     }
 }

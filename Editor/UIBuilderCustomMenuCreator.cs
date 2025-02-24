@@ -104,6 +104,12 @@ namespace UIBuilderCustomMenu.Editor
             }
         }
 
+        public static void Refresh()
+        {
+            _currentActiveUIBuilderWindow = null;
+            AddCustomToolbar();
+        }
+
         private static void AddCustomToolbar()
         {
             if (_currentActiveUIBuilderWindow != null)
@@ -130,22 +136,43 @@ namespace UIBuilderCustomMenu.Editor
             var unityBuilderToolbar = activeWindowRootVisualElement.Q(className: "unity-builder-toolbar");
             var canvasThemeMenu = unityBuilderToolbar.Q(name: "canvas-theme-menu");
 
-            var canvasThemeMenuIndex = unityBuilderToolbar.hierarchy.IndexOf(canvasThemeMenu);
-            if (canvasThemeMenuIndex == -1)
+            const string toolbarMenuName = "CustomMenuToolbarMenu";
+
+            var customMenusToolbarMenu = unityBuilderToolbar.Q<ToolbarMenu>(toolbarMenuName);
+            if (customMenusToolbarMenu == null)
             {
-                UnityEngine.Debug.LogError($"canvas-theme-menu is not found");
+                customMenusToolbarMenu = new ToolbarMenu()
+                {
+                    name = toolbarMenuName,
+                    text = "Custom Menus"
+                };
+
+                var canvasThemeMenuIndex = unityBuilderToolbar.hierarchy.IndexOf(canvasThemeMenu);
+                if (canvasThemeMenuIndex == -1)
+                {
+                    UnityEngine.Debug.LogError($"canvas-theme-menu is not found");
+                    return;
+                }
+
+                // CanvasThemeMenuの左横に生成
+                unityBuilderToolbar.hierarchy.Insert(canvasThemeMenuIndex, customMenusToolbarMenu);
+            }
+
+            customMenusToolbarMenu.menu.ClearItems();
+
+            customMenusToolbarMenu.menu.AppendAction(
+                actionName: "Refresh",
+                action: _ => { Refresh(); }
+            );
+
+            var orderedCreators = creators.OrderBy(x => x.Priority).ToList();
+
+            if (orderedCreators.Count == 0)
+            {
                 return;
             }
 
-            var customMenusToolbarMenu = new ToolbarMenu()
-            {
-                text = "Custom Menus"
-            };
-
-            // CanvasThemeMenuの左横に生成
-            unityBuilderToolbar.hierarchy.Insert(canvasThemeMenuIndex, customMenusToolbarMenu);
-
-            var orderedCreators = creators.OrderBy(x => x.Priority).ToList();
+            customMenusToolbarMenu.menu.AppendSeparator();
 
             // Priority順に並び替え
             var prevPriority = orderedCreators[0].Priority;
