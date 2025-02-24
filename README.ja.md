@@ -2,6 +2,10 @@
 
 これはUIToolKitの [UIBuilder](https://docs.unity3d.com/6000.0/Documentation/Manual/UIB-interface-overview.html) 上にカスタムしたメニューを表示するEditor拡張です。
 
+## Demo
+
+![ui-builder-custom-menu-demo](https://github.com/user-attachments/assets/28cbb6e7-9ed7-4f93-b6af-3c581d423053)
+
 ## Installation
 
 - Install
