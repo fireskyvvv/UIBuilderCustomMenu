@@ -12,29 +12,29 @@ namespace UIBuilderCustomMenu.Samples.SimpleSample.Editor
             {
                 new(
                     menuPath: $"Test1",
-                    callback: _ => { UnityEngine.Debug.Log("Test1 Clicked!"); }
+                    onClickAction: _ => { UnityEngine.Debug.Log("Test1 Clicked!"); }
                 ),
                 new(
                     menuPath: $"Test2",
-                    callback: _ => { UnityEngine.Debug.Log("Test2 Clicked!"); }
+                    onClickAction: _ => { UnityEngine.Debug.Log("Test2 Clicked!"); }
                 ),
                 new(
                     menuPath: $"Test3",
-                    callback: _ => { UnityEngine.Debug.Log("Test2 Clicked!"); },
+                    onClickAction: _ => { UnityEngine.Debug.Log("Test2 Clicked!"); },
                     separate: true
                 ),
                 new(
                     menuPath: $"Sub/1",
-                    callback: _ => { UnityEngine.Debug.Log("Sub/1 Clicked!"); }
+                    onClickAction: _ => { UnityEngine.Debug.Log("Sub/1 Clicked!"); }
                 ),
                 new(
                     menuPath: $"Sub/2",
-                    callback: _ => { UnityEngine.Debug.Log("Sub/2 Clicked!"); },
+                    onClickAction: _ => { UnityEngine.Debug.Log("Sub/2 Clicked!"); },
                     separate: true
                 ),
                 new(
                     menuPath: $"Sub/3",
-                    callback: _ => { UnityEngine.Debug.Log("Sub/3 Clicked!"); }
+                    onClickAction: _ => { UnityEngine.Debug.Log("Sub/3 Clicked!"); }
                 ),
             };
         }

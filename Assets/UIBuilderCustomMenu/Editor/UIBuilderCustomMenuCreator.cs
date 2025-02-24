@@ -163,7 +163,7 @@ namespace UIBuilderCustomMenu.Editor
                     var menuPath = customMenu.MenuPath;
                     customMenusToolbarMenu.menu.AppendAction(
                         actionName: menuPath,
-                        action: customMenu.Action,
+                        action: customMenu.OnClickAction,
                         actionStatusCallback: customMenu.GetStatus
                     );
 
